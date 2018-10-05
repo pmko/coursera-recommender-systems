@@ -1,6 +1,3 @@
-##### open questions
-* difference between RMSE by user and rating
-
 # Prediction Accuracy Metrics
 Measures that look at how correct or incorrect, or how far off a recommender system is in predicting what a person would have rated an item. Error metrics are computed using a hidden data evaluation methodology which is retrospective in nature. Hiding an existing user's rating and then try to predict it measures how far off the system is from reality. By taking existing data and we see how well the recommender could have generated that data in the absence of having it.
 
@@ -27,14 +24,16 @@ MSE = {\sum_{ratings} (P-R)^2 \over ratings}
 $$
 
 ### Root Mean Squared Error
-Has all the advantages of MSE, but corrects the scale issue by reversing the square.  So it removes the sign by squaring, penalizes large errors more than small and remains in the original units of measure  
+Has all the advantages of MSE, but corrects the scale issue by reversing the square.  So it removes the sign by squaring, penalizes large errors more than small and remains in the original units of measure.  This is the most commonly use of the three.  
 **_Lower RMSE values are better_**
 
 $$
 RMSE = \sqrt{\sum_{ratings} (P-R)^2 \over ratings}
 $$
 
-This formula is for a single user.  Can also look at a distribution of RMSE over all users or average the RMSE of all users to get a singular value for the system.
+This can be used on a per user or per item basis.
+- For user we would look at that user's predicted rating for and subtract the actual rating, then square that value - do this for all user rated items.  Then sum those values, divide by the total number of user ratings and square root the result.  This provides the RMSE for a single user.  All user RMSEs can be averaged to evaluate the system as a whole.
+- For the item we would subtract a user rating by the predicted user rating, square it, sum up all user ratings for that item, divide by total number of user ratings for the item and then get the square root.  This is the RMSE for a single item.  All item RMSEs can be averaged to evaluate the system as a whole.S
 
 # Decision Support Metrics
 A type of recommender that helps users make good decisions like choosing "good" items and avoiding "bad" decisions.  This is less about accuracy as long as the error is consistent with the user's preference.  Additionally, how high an item is on the list is key.
@@ -127,3 +126,5 @@ The nDCG is then calculated by dividing the recommended list's DCG value by the 
 $$
 nDCG = {DCG_{achieved} \over DCG_{perfect}}
 $$
+
+# Cross-Validation Protocols
