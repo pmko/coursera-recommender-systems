@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="542bd0b3-b1d1-40d3-b169-c73956d36af4" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.gradle/" />
+    <ignored path="$PROJECT_DIR$/build/" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hybrid-assignment" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hybrid-assignment" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hybrid-assignment" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="evaluate" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hybrid-assignment" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="run" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hybrid-assignment" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="LinearBlendItemScorer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/lenskit/mooc/hybrid/LinearBlendItemScorer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="741">
+              <caret line="77" selection-start-line="77" selection-end-line="77" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogisticModelProvider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/lenskit/mooc/hybrid/LogisticModelProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="893">
+              <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogisticItemScorer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/lenskit/mooc/hybrid/LogisticItemScorer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="66" column="13" lean-forward="true" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="myGradleHomes">
+      <map>
+        <entry key="$PROJECT_DIR$" value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14" />
+      </map>
+    </option>
+    <option name="myGradleVersions">
+      <map>
+        <entry key="$PROJECT_DIR$" value="2.14" />
+      </map>
+    </option>
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="hybrid-assignment" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="hybrid-assignment" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="availableTasks">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the components produced by root project 'hybrid-assignment'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="components" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildDependents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the sub-projects of root project 'hybrid-assignment'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="recommendSVDLog" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="classes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'hybrid-assignment'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildEnvironment" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Gradle wrapper files. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="wrapper" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles test classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="testClasses" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Javadoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="javadoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareSubmission" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="crossfold" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="recommendLuceneSVDLog" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs a LensKit evaluation to evaluate the logistic recommender." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="evaluateLogistic" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles a jar archive containing the main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="jar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the configuration model of root project 'hybrid-assignment'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="model" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes main resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the tasks runnable from root project 'hybrid-assignment'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="graphSVDLog" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Initializes a new Gradle build. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="init" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="graphLuceneSVDLog" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs the unit tests." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="test" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="recommendLuceneSVD" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles main Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the insight into a specific dependency in root project 'hybrid-assignment'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencyInsight" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all checks." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="check" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles the outputs of this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="assemble" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Deletes the build directory." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="clean" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs a LensKit evaluation to sweep hybrid parameters." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="sweepHybrid" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles test Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileTestJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all dependencies declared in root project 'hybrid-assignment'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="recommendIISVD" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes test resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays a help message." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="help" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="build" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects it depends on." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="runAll" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the properties of root project 'hybrid-assignment'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="properties" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="5994896308000" />
+        <entry key="$PROJECT_DIR$/.gradle" value="0" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="1305633184" />
+        <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="159431464" />
+        <entry key="$PROJECT_DIR$/settings.gradle" value="3360682090" />
+      </map>
+    </option>
+    <option name="projectBuildClasspath">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <ExternalProjectBuildClasspathPojo>
+              <option name="modulesBuildClasspath">
+                <map>
+                  <entry key="$PROJECT_DIR$">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="entries">
+                          <list>
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lenskit/lenskit-gradle/3.0-M2/93849ad4bc44ed59b2feeabf6a94df28df58cb3e/lenskit-gradle-3.0-M2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lenskit/lenskit-gradle/3.0-M2/487ff86a2d557d9fb21aeec1df35e994fe1d6695/lenskit-gradle-3.0-M2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.12/58697792617f38bf86d8e26bc004aac505e516a9/slf4j-api-1.7.12-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.12/8e20852d05222dc286bf1c71d78d0531e177c317/slf4j-api-1.7.12.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/annotations/3.0.1u2/3f8905fee497bc64999ea458285311220cfa92bf/annotations-3.0.1u2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/annotations/3.0.1u2/89a670596c98e416fb2583c08ae34cc5c3ce2097/annotations-3.0.1u2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.joda/joda-convert/1.8.1/7dea1f002df5fe9c0ab910b886aa550161f84867/joda-convert-1.8.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.joda/joda-convert/1.8.1/675642ac208e0b741bc9118dcbcae44c271b992a/joda-convert-1.8.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/19.0/91a4d115400e904f22b03a78deb355e9ea803cd4/guava-19.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/19.0/6ce200f6b23222af3d8abb6b6459e6c44f4bb0e9/guava-19.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.4/b49dafc9cfef24c356827f322e773e7c26725dd2/commons-lang3-3.4-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.4/5fe28b9518e58819180a43a850fbc0dd24b7c050/commons-lang3-3.4.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.jcip/jcip-annotations/1.0/d853625d8001c00d40abed553e670279504699f9/jcip-annotations-1.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.jcip/jcip-annotations/1.0/afba4942caaeaf46aab0b976afd57cc7c181467e/jcip-annotations-1.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.1/a2926c057ca3b662b9db194c869bdbe7d3bb8aef/jsr305-3.0.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.1/f7be08ec23c21485b9b5a1cf1654c2ec8c58168d/jsr305-3.0.1.jar" />
+                          </list>
+                        </option>
+                        <option name="path" value="$PROJECT_DIR$" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="name" value="hybrid-assignment" />
+              <option name="projectBuildClasspath">
+                <list>
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/groovy-all-2.4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-core-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-native-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-wrapper-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-docs-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-installation-beacon-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-ui-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-open-api-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-jvm-services-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-model-groovy-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-cli-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-tooling-api-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-base-services-groovy-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-launcher-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-logging-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/ant-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-process-services-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-base-services-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-messaging-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-model-core-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/gradle-resources-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/ant-launcher-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-platform-jvm-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-jacoco-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-platform-native-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-publish-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-sonar-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-resources-sftp-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-javascript-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-test-kit-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-platform-base-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-language-scala-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-language-native-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-language-java-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-language-jvm-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-ivy-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-plugins-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-code-quality-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-ide-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-ear-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-platform-play-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-testing-native-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-dependency-management-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-ide-play-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-build-comparison-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-ide-native-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-jetty-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-plugin-development-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-diagnostics-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-tooling-api-builders-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-antlr-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-resources-http-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-resources-s3-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-build-init-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/ivy-2.2.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-signing-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-testing-base-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-announce-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-scala-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-plugin-use-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-maven-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-testing-jvm-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-language-groovy-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-osgi-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14-bin/76oc0mnc3ieqtsukq90mp0rxk/gradle-2.14/lib/plugins/gradle-reporting-2.14.jar" />
+                  <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
+                  <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
+                </list>
+              </option>
+            </ExternalProjectBuildClasspathPojo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/Sandbox/Coursera/recommendercourse03/EVAL/eval-assignment" value="PREVIEW" />
+        <entry key="$USER_HOME$/Sandbox/Coursera/recommendercourse04/SVD-CF/svd-assignment" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/org/lenskit/mooc/hybrid/LinearBlendItemScorer.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/org/lenskit/mooc/hybrid/LogisticModelProvider.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/lenskit/mooc/hybrid/LogisticItemScorer.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="49" />
+    <option name="y" value="27" />
+    <option name="width" value="1430" />
+    <option name="height" value="884" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="hybrid-assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hybrid-assignment" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="hybrid-assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hybrid-assignment" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hybrid-assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hybrid-assignment" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="hybrid-assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hybrid-assignment" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hybrid-assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hybrid-assignment" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mooc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hybrid-assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hybrid-assignment" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mooc" type="462c0819:PsiDirectoryNode" />
+              <item name="cbf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hybrid-assignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hybrid-assignment" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mooc" type="462c0819:PsiDirectoryNode" />
+              <item name="hybrid" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.hybrid-assignment [recommendLuceneSVDLog]">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="hybrid-assignment [recommendLuceneSVDLog]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="recommendLuceneSVDLog" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+    </configuration>
+    <configuration name="hybrid-assignment [recommendLuceneSVD]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="recommendLuceneSVD" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+    </configuration>
+    <configuration name="hybrid-assignment [sweepHybrid]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="sweepHybrid" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.hybrid-assignment [recommendLuceneSVD]" />
+      <item itemvalue="Gradle.hybrid-assignment [sweepHybrid]" />
+      <item itemvalue="Gradle.hybrid-assignment [recommendLuceneSVDLog]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.hybrid-assignment [recommendLuceneSVDLog]" />
+        <item itemvalue="Gradle.hybrid-assignment [sweepHybrid]" />
+        <item itemvalue="Gradle.hybrid-assignment [recommendLuceneSVD]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="542bd0b3-b1d1-40d3-b169-c73956d36af4" name="Default" comment="" />
+      <created>1534313245054</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1534313245054</updated>
+      <workItem from="1534313246227" duration="1733000" />
+      <workItem from="1534374905980" duration="6033000" />
+      <workItem from="1534708930628" duration="5065000" />
+      <workItem from="1534736429291" duration="25431000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="38262000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="49" y="27" width="1871" height="1053" extended-state="6" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49972543" weight="0.32930845" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5002746" side_tool="true" weight="0.32930845" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49972543" weight="0.32930845" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32930845" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2564525" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Gradle" order="3" visible="true" weight="0.3294893" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39956093" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.32930845" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="31" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/lenskit/mooc/hybrid/LinearBlendItemScorer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1178">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/lenskit/mooc/hybrid/LogisticModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="44" column="23" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/lenskit/mooc/hybrid/LogisticItemScorer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="40" column="11" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/lenskit/mooc/hybrid/LogisticModelProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1558">
+          <caret line="98" column="9" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/lenskit/mooc/hybrid/LinearBlendItemScorer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="72" column="9" lean-forward="true" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/lenskit/mooc/hybrid/LinearBlendItemScorer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="51" column="11" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="437">
+            <caret line="29" column="75" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="75" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lenskit/lenskit-api/3.0-M2/a4742a37db7d913b6ea9bdb4b42aa1a013db8866/lenskit-api-3.0-M2-sources.jar!/org/lenskit/api/ItemScorer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/lenskit/mooc/hybrid/LinearBlendItemScorer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-math3/3.6.1/8fab23986ea8886af34818daf32a718e81dc98ba/commons-math3-3.6.1-sources.jar!/org/apache/commons/math3/linear/RealVector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="58" column="22" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="66" column="1" lean-forward="true" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lenskit/lenskit-core/3.0-M2/d67f488478e3e2455705b82bb219bd81c7cd94cd/lenskit-core-3.0-M2-sources.jar!/org/lenskit/data/ratings/Rating.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1823">
+          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.grouplens.grapht/grapht/0.11.0-BETA2/f448f9369ad678e9c57d9ba6e2c3cba2b0fcde10/grapht-0.11.0-BETA2-sources.jar!/org/grouplens/grapht/Instantiators.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="152" selection-start-line="152" selection-end-line="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/Collections.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2032">
+          <caret line="96" column="23" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/lenskit/mooc/hybrid/RecommenderList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/Map.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/lenskit/mooc/hybrid/LogisticModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="707">
+          <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
+          <folding>
+            <element signature="e#2282#2283#0" expanded="true" />
+            <element signature="e#2350#2351#0" expanded="true" />
+            <element signature="e#2461#2462#0" expanded="true" />
+            <element signature="e#2496#2497#0" expanded="true" />
+            <element signature="e#2743#2744#0" expanded="true" />
+            <element signature="e#2788#2789#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/lenskit/mooc/hybrid/LogisticModelProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="893">
+          <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/lenskit/mooc/hybrid/LogisticItemScorer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="66" column="13" lean-forward="true" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
