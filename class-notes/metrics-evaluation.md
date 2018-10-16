@@ -127,4 +127,9 @@ $$
 nDCG = {DCG_{achieved} \over DCG_{perfect}}
 $$
 
-# Cross-Validation Protocols
+# Evaluation Protocols
+
+There are a couple of primary way to conduct offline evaluations in this context. These techniques are also used in other aspects of machine learning.
+1. Hidden data:  
+Try to predict data that you already have by hiding it from the recommender.
+2. Cross-Validation
