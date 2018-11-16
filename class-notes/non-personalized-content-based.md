@@ -40,11 +40,23 @@
   - Dimensionality Reduction
 - Hybrid
 
-### Non-Personalized Summary Statistics
+### Non-Personalized
+Works well when we don't know anything about the user (cold start problem).  Simple but beneficial, efficient and fast to compute.
+
+#### Summary Statistics
 Data from the community can be used to identify best sellers, most popular and trending.
+- aggregated behavior
 - most / longest visited
 - quantity sold or accepted
 - average rating for an item
+
+### Weak Personalization
+Used when we know a little bit about the user such as zip code or current generic context (e.g. web page you are on, current item being browsed).
+
+#### Demographics and Stereotypes
+
+#### Product Association
+Related items
 
 ### Content-Based Filtering
 Use user rating or score for an item to show preference for the various item attributes.  The user model is a list of attributes (not items) and the specific user score for each.  When an item is rated (or other action that can be scored) that value is used to update the user model for all the item attributes.
@@ -66,7 +78,7 @@ There is a variant of this that uses trusted users versus similar users and then
 _matrix:_ Each column is an item, each row is a user and each cell is a rating for the user/item combination.
 
 __Item-Item__  
-Precompute similarity between an item and other items using user ratings vector for each item.  Find items that are similar to those that the user has already rated or scored.  This method has efficiencies over user-user because items don't really changes, more about availability of item. 
+Precompute similarity between an item and other items using user ratings vector for each item.  Find items that are similar to those that the user has already rated or scored.  This method has efficiencies over user-user because items don't really changes, more about availability of item.
 
 _matrix:_ There is row for each item and a column for each item so that all possible item/item combinations are represented.  Each cell is the similarity score for the item/item combination.
 
