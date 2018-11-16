@@ -44,11 +44,36 @@
 Works well when we don't know anything about the user (cold start problem).  Simple but beneficial, efficient and fast to compute.
 
 #### Summary Statistics
-Data from the community can be used to identify best sellers, most popular and trending.
-- aggregated behavior
-- most / longest visited
-- quantity sold or accepted
-- average rating for an item
+Data from the community can be used to identify best sellers, most popular and trending.  By aggregating behavior (frequency, average) we can get a sense for what the community is doing.
+
+- consumed: most / longest visited
+- popularity (can be an important metric)
+- count: quantity sold or accepted
+- average: rating for an item
+
+__things to consider:__
+- averages can be misleading.
+- people rate on different scales
+    - consider normalizing data  
+- credibility of users who rate or provide feedback
+- more data is better
+- show more information such as count or distribution
+- context is also important to consider
+    - need to understand relationship between summary stat and user need. (e.g. correct average)
+- personalization addresses these limitations
+
+__damped means__  
+Solves for low confidence and few ratings or scores.
+
+The standard mean is the sum over users $u$ the user rating for each item $r_{ui}$ and divide by the total number of items $n$.
+$$
+mean = {\sum_{u} r_{ui} \over n}
+$$
+
+$k$ is the damping factor and $\mu$ us the global mean.
+$$
+damped mean = {\sum_{u} r_{ui} + k\mu \over n + k}
+$$
 
 ### Weak Personalization
 Used when we know a little bit about the user such as zip code or current generic context (e.g. web page you are on, current item being browsed).
