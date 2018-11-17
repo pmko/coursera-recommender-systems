@@ -91,24 +91,40 @@ Taking it further, if there are multiple applicable demographics then you can us
 - Logistic Regression for unary data such as purchased or not (0/1)
 
 #### Product Association
-Related items
+Related items can be used to make recommendations. If you are looking at this item you may want this other item.  Understanding the potential relationship between products can help inform potentially good recommendations. Factors such as price need to be kept in mind so that you don't recommend a product that is disproportional to the initial item.  Overall Product Association takes into account the present context to provide more relevant, non-personalized recommendations.  Can use attributes (such as the following) singularly or in combination:
+- current item
+- path
+- time
+- location
 
-Simple approach: percentage of user who by $X$ also bough $Y$ and divide by the count of $X$.  This doesn't account for any potential relevancy between $X$ and $Y$ and doesn't account for the general popularity of $Y$.
+_Example: If you are looking at an electronic device, consider getting batteries and not the other way around._
+
+_Simple approach:_ percentage of users who buy $X$ also bought $Y$ and divide by the count of $X$.  This doesn't account for any potential relevancy between $X$ and $Y$ and doesn't account for the general popularity of $Y$.
 $$
-X \bigwedge Y \over X
+X \wedge Y \over X
 $$
 
 Using another approach that's more controlled which doesn't let the popularity of $Y$ overwhelm $X$.  We can use the basis of Bayes' Law to do this.  This is defined as the probability that $B$ occurs given $A$ multiplied by the probability of $A$ to begin with and divide by the overall probability of $B$.
 $$
-P(A|B) = {P(B|A) P(A) \over P(B)}
+\text {Bayes' Law} = P(A|B) = {P(B|A) P(A) \over P(B)}
 $$
 
-We can use this methodology to see how much more likely product $Y$ is to be purchased than it was before $X$ was purchased as the triggering event. The probability of $Y$ given $X$ divided by $X$.  So if the ratio comes close to 1, then $X$ didn't change anything.
+We can use this methodology to see how much more likely product $Y$ is to be purchased than it was before $X$ was purchased as the triggering event. The probability of $Y$ given $X$ divided by $X$.  So if the ratio comes close to 1, then $X$ didn't change anything. Basic formula:
 $$
-P(Y|X) \over P(X)
+s(i|j) = P(i|j) = {P(i \wedge j) \over P(j)} = {\text{# of users rating both} / \text{# of users} \over \text{# users rating}\,\, j / \text{# of users}}
 $$
 
-Further we can use Association Rule Mining. This tells us not whether $X$ makes $Y$ more likely or $Y$ makes $X$ more likely, but looks at how they make each other more likely.
+_With Lift applied:_  The probability of $i$ and $j$ over the probability of $i$ times the probability of $j$.
+
+So the frequency with which they appear together over what that frequency would be if they were entirely independent. A score of 1 means that the items are statistically independent from each other and a high score means that they're more likely to be bought together than we would expect if there was no connection between these items.
+$$
+s(i|j) = {P(i|j) \over P(i)} = {P(i \wedge j) \over P(i) \, P(j)}
+$$
+
+Further we can use __Association Rule Mining__. This tells us not whether $X$ makes $Y$ more likely or $Y$ makes $X$ more likely, but looks at how they make each other more likely.  This is usually used to evaluate a collections of items and make a recommendation based on that.
+$$
+P(X \,\, \text{AND} \,\, Y) \over P(X) * P(Y)
+$$
 
 ### Content-Based Filtering
 Use user rating or score for an item to show preference for the various item attributes.  The user model is a list of attributes (not items) and the specific user score for each.  When an item is rated (or other action that can be scored) that value is used to update the user model for all the item attributes.
