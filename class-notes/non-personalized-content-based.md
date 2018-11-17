@@ -63,30 +63,62 @@ __things to consider:__
 - personalization addresses these limitations
 
 __damped means__  
-Solves for low confidence and few ratings or scores.
+Solves for low confidence and few ratings or scores when computing averages.
 
 The standard mean is the sum over users $u$ the user rating for each item $r_{ui}$ and divide by the total number of items $n$.
 $$
-mean = {\sum_{u} r_{ui} \over n}
+mean = s(i) = {\sum_{u} r_{ui} \over n}
 $$
 
 $k$ is the damping factor and $\mu$ us the global mean.
 $$
-damped mean = {\sum_{u} r_{ui} + k\mu \over n + k}
+damped mean = s(i) = {\sum_{u} r_{ui} + k\mu \over n + k}
 $$
 
 ### Weak Personalization
 Used when we know a little bit about the user such as zip code or current generic context (e.g. web page you are on, current item being browsed).
 
 #### Demographics and Stereotypes
+Popularity may not always represent the tastes of the target user.  Personalizes to certain attributes of the individual by breaking down summary statistics by demographic.
+- Age (range)
+- Gender
+- Race/Ethnicity
+- Socio-Economic Status
+- Location
+
+Taking it further, if there are multiple applicable demographics then you can use a multiple regression model.
+- Linear Regression for multi-valued data such as ratings
+- Logistic Regression for unary data such as purchased or not (0/1)
 
 #### Product Association
 Related items
+
+Simple approach: percentage of user who by $X$ also bough $Y$ and divide by the count of $X$.  This doesn't account for any potential relevancy between $X$ and $Y$ and doesn't account for the general popularity of $Y$.
+$$
+X \bigwedge Y \over X
+$$
+
+Using another approach that's more controlled which doesn't let the popularity of $Y$ overwhelm $X$.  We can use the basis of Bayes' Law to do this.  This is defined as the probability that $B$ occurs given $A$ multiplied by the probability of $A$ to begin with and divide by the overall probability of $B$.
+$$
+P(A|B) = {P(B|A) P(A) \over P(B)}
+$$
+
+We can use this methodology to see how much more likely product $Y$ is to be purchased than it was before $X$ was purchased as the triggering event. The probability of $Y$ given $X$ divided by $X$.  So if the ratio comes close to 1, then $X$ didn't change anything.
+$$
+P(Y|X) \over P(X)
+$$
+
+Further we can use Association Rule Mining. This tells us not whether $X$ makes $Y$ more likely or $Y$ makes $X$ more likely, but looks at how they make each other more likely.
 
 ### Content-Based Filtering
 Use user rating or score for an item to show preference for the various item attributes.  The user model is a list of attributes (not items) and the specific user score for each.  When an item is rated (or other action that can be scored) that value is used to update the user model for all the item attributes.
 
 Apply user model to new items to get a similarity score for item against user profile vector, essentially make a prediction if the user will like the item or not.
+
+### TFIDF
+bla bla bla
+
+[//]: # (this section may need to move to another document)
 
 ### Personalized Collaborative Filtering
 Primarily uses a matrix of user/item ratings and utilizes the opinions of others to predict/recommend.  This does not use the item attributes, but just the opinion or tendency towards an item to make predictions and recommendations.
@@ -106,5 +138,3 @@ __Item-Item__
 Precompute similarity between an item and other items using user ratings vector for each item.  Find items that are similar to those that the user has already rated or scored.  This method has efficiencies over user-user because items don't really changes, more about availability of item.
 
 _matrix:_ There is row for each item and a column for each item so that all possible item/item combinations are represented.  Each cell is the similarity score for the item/item combination.
-
-### TFIDF
