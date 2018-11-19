@@ -67,12 +67,12 @@ Solves for low confidence and few ratings or scores when computing averages.
 
 The standard mean is the sum over users $u$ the user rating for each item $r_{ui}$ and divide by the total number of items $n$.
 $$
-mean = s(i) = {\sum_{u} r_{ui} \over n}
+\text {mean} = s(i) = {\sum_{u} r_{ui} \over n}
 $$
 
 $k$ is the damping factor and $\mu$ us the global mean.
 $$
-damped mean = s(i) = {\sum_{u} r_{ui} + k\mu \over n + k}
+\text {damped mean} = s(i) = {\sum_{u} r_{ui} + k\mu \over n + k}
 $$
 
 ### Weak Personalization
@@ -127,6 +127,13 @@ P(X \,\, \text{AND} \,\, Y) \over P(X) * P(Y)
 $$
 
 ### Content-Based Filtering
+Establishing stable user preferences is key to making this approach work.  The key concepts are:
+- model items according to relevant attributes
+- model user preferences by attribute
+- match those profiles together to make a recommendation
+
+Users don't necessarily like to explicitly tell you what they are interested in, but do better at editing preferences that were learned.  These preferences can be learned through user actions and/or explicit user ratings.  Ultimately we want to merge implicit and explicit feedback into the user model.
+
 Use user rating or score for an item to show preference for the various item attributes.  The user model is a list of attributes (not items) and the specific user score for each.  When an item is rated (or other action that can be scored) that value is used to update the user model for all the item attributes.
 
 Apply user model to new items to get a similarity score for item against user profile vector, essentially make a prediction if the user will like the item or not.
