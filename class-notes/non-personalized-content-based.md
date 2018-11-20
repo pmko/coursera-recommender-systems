@@ -134,12 +134,22 @@ Establishing stable user preferences is key to making this approach work.  The k
 
 Users don't necessarily like to explicitly tell you what they are interested in, but do better at editing preferences that were learned.  These preferences can be learned through user actions and/or explicit user ratings.  Ultimately we want to merge implicit and explicit feedback into the user model.
 
+Overall we need content attributes that can align with user preferences, they need to be compatible for comparison.  There also has to be a reasonable distribution of these attributes across items.  This approach also works well with a small set of users.
+
 Use user rating or score for an item to show preference for the various item attributes.  The user model is a list of attributes (not items) and the specific user score for each.  When an item is rated (or other action that can be scored) that value is used to update the user model for all the item attributes.
 
 Apply user model to new items to get a similarity score for item against user profile vector, essentially make a prediction if the user will like the item or not.
 
 ### TFIDF
-bla bla bla
+Term Frequency Inverse Document Frequency  
+_Term Frequency_ = Number of occurrences of a term in the document (e.g. simple count)
+_Inverse Document Frequency_ = How few documents contain this term or how rare it is for a document to contain this term.
+
+TFIDF can be used to create a profile of an item, a weighted vector of its tags or labels that explains what the item is about. This weighted vector can be folded in to the user profile when we identify that the user likes or dislikes this particular item.  This profile can then be matches against future items to make recommendations.
+
+$$
+
+$$
 
 [//]: # (this section may need to move to another document)
 
