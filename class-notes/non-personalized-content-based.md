@@ -140,16 +140,55 @@ Use user rating or score for an item to show preference for the various item att
 
 Apply user model to new items to get a similarity score for item against user profile vector, essentially make a prediction if the user will like the item or not.
 
+__Benefits:__  
+- entirely content based
+- able to make a recommendation with only a single user
+- understandable / explainable profile
+- profile is editable
+- efficient computation
+- ability to integrate with
+
+__Drawbacks__
+- simplified model
+- can't handle interdependencies
+
 ### TFIDF
-Term Frequency Inverse Document Frequency  
+Term Frequency Inverse Document Frequency
+
 _Term Frequency_ = Number of occurrences of a term in the document (e.g. simple count)
 _Inverse Document Frequency_ = How few documents contain this term or how rare it is for a document to contain this term.
 
 TFIDF can be used to create a profile of an item, a weighted vector of its tags or labels that explains what the item is about. This weighted vector can be folded in to the user profile when we identify that the user likes or dislikes this particular item.  This profile can then be matches against future items to make recommendations.
 
+The origin of the tags/labels is important to understand.  If they are curated then it can be a trusted label, but if community driven, the label may need to appear more than once to trust it as an accurate descriptor of the item.  TFIDF is a good technique for mining relevant item labels.
+
 $$
 
 $$
+
+### Vector Space Profiles
+As we build item and user profiles based on attributes we create a vector space model which represents user preference as a single scalar value for each dimension.  The potential draw back is that there is no difference between liking and importance.
+
+Ways to build up profiles:
+- add item vectors together?
+  - do they need to be normalized or weighted?
+- how do we use ratings or scores for items?
+  - aggregate without weights
+  - add positives and substract negatives
+  - only add item above a threshold (e.g. 3.5 stars or more)
+  - weighted, positive only (and possible negative too)
+- updating profiles with new data
+  - recompute each time (not efficient, wastes compute resources)
+  - keep track of total weight and mix in new vectors (linear combination)
+  - decay current profile and mix in new item vector
+
+### Predictions
+- Cosine of the angle between the two vectors (profile, item)
+  - cosine starts at its maximum, positive one, when the two vectors have the same angle and the angle between them is zero
+  - grows negatively as that angle grows
+  - then cycles back as they get closer together again
+  - good measure that smoothly scales from saying this is a perfect match to this is exactly opposite of what the user likes. Then as it weaves its way back around through space, back through a perfect match again
+  - this provides a score between -1 and 1 which can be used to make predictions. closer to 1 is better
 
 [//]: # (this section may need to move to another document)
 
