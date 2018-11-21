@@ -162,11 +162,32 @@ TFIDF can be used to create a profile of an item, a weighted vector of its tags 
 
 The origin of the tags/labels is important to understand.  If they are curated then it can be a trusted label, but if community driven, the label may need to appear more than once to trust it as an accurate descriptor of the item.  TFIDF is a good technique for mining relevant item labels.
 
+_notation_:  
+$t$
+: term  
+$d$
+: document  
+$D$
+: all documents  
+$f$
+: frequency
+
+TF-IDF for a single item term (or tag/label)
+$$
+q_{it} = f_{t,d} \cdot 1/\log (d \in D : t \in d)
 $$
 
+The tag vector for an item $i$
+$$
+\hat{\mathbf{q}_i} = \{q_{it_1},q_{it_2}, ..., q_{it_n}\}
 $$
 
-### Vector Space Profiles
+Normalize the tag vector to a unit vector by dividing each value by the Euclidean length of the whole vector
+$$
+\hat{\mathbf{q}_i} = {\overrightarrow{q} \over {\|\overrightarrow{q}\|}_2}
+$$
+
+### Vector Space User Profiles
 As we build item and user profiles based on attributes we create a vector space model which represents user preference as a single scalar value for each dimension.  The potential draw back is that there is no difference between liking and importance.
 
 Ways to build up profiles:
@@ -182,6 +203,18 @@ Ways to build up profiles:
   - keep track of total weight and mix in new vectors (linear combination)
   - decay current profile and mix in new item vector
 
+__threshold profile:__  
+sum of the item-tag vectors of all items the user has rated positively (>= 3.5 stars)
+$$
+p_{ut} = \sum_{i \in I_u: r_{ui} \ge 3.5} q_{it}
+$$
+
+__weighted profile:__  
+weighted sum of the item vectors for all rated items, with weights being based on the user's rating.  Subtract the users mean rating from each rating and multiply by the item tag value, then sum all these up.
+$$
+p_{ut} = \sum_{i \in I(u)} (r_{ui} - \mu_u) q_{it}
+$$
+
 ### Predictions
 - Cosine of the angle between the two vectors (profile, item)
   - cosine starts at its maximum, positive one, when the two vectors have the same angle and the angle between them is zero
@@ -189,6 +222,12 @@ Ways to build up profiles:
   - then cycles back as they get closer together again
   - good measure that smoothly scales from saying this is a perfect match to this is exactly opposite of what the user likes. Then as it weaves its way back around through space, back through a perfect match again
   - this provides a score between -1 and 1 which can be used to make predictions. closer to 1 is better
+
+__cosine similarity:__  
+the score for an item is the cosine between that item's tag vector and the user's profile vector
+$$
+\mathrm{cos}(\mathbf{p_u},\mathbf{q_i}) = \frac{\mathbf{p_u} \cdot \mathbf{q_i}} {{\|\mathbf{p_u}\|}_2 {\|\mathbf{q_i}\|}_2} = \frac{\sum_t q_{ut} p_{it}}{\sqrt{\sum_t q_{ut}^2} \sqrt{\sum_t p_{it}^2}}
+$$
 
 [//]: # (this section may need to move to another document)
 
