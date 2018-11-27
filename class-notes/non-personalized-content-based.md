@@ -229,23 +229,4 @@ $$
 \mathrm{cos}(\mathbf{p_u},\mathbf{q_i}) = \frac{\mathbf{p_u} \cdot \mathbf{q_i}} {{\|\mathbf{p_u}\|}_2 {\|\mathbf{q_i}\|}_2} = \frac{\sum_t q_{ut} p_{it}}{\sqrt{\sum_t q_{ut}^2} \sqrt{\sum_t p_{it}^2}}
 $$
 
-[//]: # (this section may need to move to another document)
-
-### Personalized Collaborative Filtering
-Primarily uses a matrix of user/item ratings and utilizes the opinions of others to predict/recommend.  This does not use the item attributes, but just the opinion or tendency towards an item to make predictions and recommendations.
-
-Both approaches below use the same common core, a sparse matrix of ratings.
-- predict: fill in missing values
-- recommend: select promising cells
-
-__User-User__  
-Select neighborhood of similar-taste users and use their opinions of items to predict an item(s) for the user of interest where they have not previously rated or interacted with that item. Compute a similarity score between a user and other users. Then look for users with high similarity scores (neighborhood) that have rated the item of interest or create a list of possible recommendations.  The challenge with this method is that user tastes can change over time and are usually only limited to a category of items, thus taking more compute resources to keep current.
-
-There is a variant of this that uses trusted users versus similar users and then looks at their ratings / tastes to make predictions and recommendations.
-
-_matrix:_ Each column is an item, each row is a user and each cell is a rating for the user/item combination.
-
-__Item-Item__  
-Precompute similarity between an item and other items using user ratings vector for each item.  Find items that are similar to those that the user has already rated or scored.  This method has efficiencies over user-user because items don't really changes, more about availability of item.
-
-_matrix:_ There is row for each item and a column for each item so that all possible item/item combinations are represented.  Each cell is the similarity score for the item/item combination.
+[//]: # (this sis great way to do a comment)

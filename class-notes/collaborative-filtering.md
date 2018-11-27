@@ -1,20 +1,22 @@
 <u>Cited Papers</u>
 
-An Algorithmic Framework for Collaborative Filtering
+- An Algorithmic Framework for Collaborative Filtering  
 file: algs.pdf
 
-Explaining Collaborative Filtering Recommendations
+- Explaining Collaborative Filtering Recommendations  
 file: explain-CSCW-20001.pdf
 
-Item-Based Top-N Recommendation Algorithms
+- Item-Based Top-N Recommendation Algorithms  
 file: itemrsTOIS04.pdf
 
+### Personalized Collaborative Filtering
+Primarily uses a matrix of user/item ratings and utilizes the opinions of others to predict/recommend.  This does not use the item attributes, but just the opinion or tendency towards an item to make predictions and recommendations.
 
-
-------
+Both approaches below use the same common core, a sparse matrix of ratings.
+- predict: fill in missing values
+- recommend: select promising cells
 
 #### User-User Correlation
-
 Uses the Pearson Correlation Formula to calculate similarity between users mean-centered ratings for all items.  Mean-centered takes the rating for item $i$ and subtracts the average rating for all items.
 $$
 r_{vi} - \bar{r}_v
@@ -56,8 +58,12 @@ double similarity = Vectors.dotProduct( adjustedTargetUserVector, adjustedVUserV
 ```
 
 
-
 #### User-User Collaboration
+Select neighborhood of similar-taste users and use their opinions of items to predict an item(s) for the user of interest where they have not previously rated or interacted with that item. Compute a similarity score between a user and other users. Then look for users with high similarity scores (neighborhood) that have rated the item of interest or create a list of possible recommendations.  The challenge with this method is that user tastes can change over time and are usually only limited to a category of items, thus taking more compute resources to keep current.
+
+There is a variant of this that uses trusted users versus similar users and then looks at their ratings / tastes to make predictions and recommendations.
+
+_matrix:_ Each column is an item, each row is a user and each cell is a rating for the user/item combination.
 
 This is a correlation-weighted average formula.  Doesn't address the issue that users rate on different scales (e.g user $u$ rating of 2 would be the same as user $v$ rating of 4)
 $$
@@ -75,8 +81,6 @@ SUMPRODUCT($B$2:$B$6,C2:C6)/SUMIFS($B$2:$B$6,C2:C6,">0")
 $w$ is the weight that user $v$ should be contributing to the prediction for user $u$ and item $i$ (similarity between the users).  how much $v$ should contribute to $u$
 
 $s(u,i)$ is the prediction score for user $u$ and item $i$
-
-
 
 ####  User-User Collaboration with Normaliztion
 
@@ -154,10 +158,6 @@ for (long i : items) {
 }
 ```
 
-
-
-------
-
 #### Item-Item Correlation
 
 Item similarity is computed using the pearson correlation, same as before with users, but now we are substracting item means and not user means to provide normalization for each item rating.
@@ -174,10 +174,6 @@ SUMPRODUCT(NormRatings!$C$2:$C$21,NormRatings!B$2:B$21)/(SQRT(SUMSQ(NormRatings!
 ```
 
 ```java
-/**
- * Construct the item-item model.
- * @return The item-item model.
- */
 public SimpleItemItemModel get() {
     // mean centered item vectors
     Map<Long,Long2DoubleMap> itemVectors = Maps.newHashMap();
@@ -185,7 +181,7 @@ public SimpleItemItemModel get() {
     Long2DoubleMap itemMeans = new Long2DoubleOpenHashMap();
 
     //get all ratings data
-    try (ObjectStream<IdBox<List<Rating>>> stream = dao.query(Rating.class)
+    try (ObjectStream <IdBox <List <Rating>>> stream = dao.query(Rating.class)
                                                        .groupBy(CommonAttributes.ITEM_ID)
                                                        .stream()) {
         // build itemVectors
@@ -244,8 +240,10 @@ public SimpleItemItemModel get() {
 ```
 
 
-
 #### Item-Item Collaboration
+Precompute similarity between an item and other items using user ratings vector for each item.  Find items that are similar to those that the user has already rated or scored.  This method has efficiencies over user-user because items don't really changes, more about availability of item.
+
+_matrix:_ There is row for each item and a column for each item so that all possible item/item combinations are represented.  Each cell is the similarity score for the item/item combination.
 
 predicting un-normailized score for user $u$ and item $i$ wherer $r_{uj}$ is a users rating for item $j$ and $w_{ij}$ is the similarity score between items $i$ and $j$
 $$
@@ -255,10 +253,7 @@ $$
 SUMPRODUCT(Matrix!$B18:$U18,Ratings!$B$3:$U$3)/SUMIFS(Matrix!$B18:$U18,Ratings!$B$3:$U$3,">0")
 ```
 
-
-
 #### Item-Item Collaboration with Normaliztion
-
 very similar to user-user except we use item mean to normailze rating and we use the item-item similarity as the weight.  We only sum the similarity weights for items that user $u$ has rating in the denominator.
 $$
 s(i,u) = {\sum_{j \in I_u}(r_{uj}-\mu_j)w_{ij} \over \sum_{j \in I_u} |w_{ij}|} + \mu_i
@@ -327,6 +322,5 @@ public ResultMap scoreWithDetails(long user, @Nonnull Collection<Long> items) {
     }
 
     return Results.newResultMap(results);
-
 }
 ```
