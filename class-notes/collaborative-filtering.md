@@ -16,10 +16,22 @@ Both approaches below use the same common core, a sparse matrix of ratings.
 - predict: fill in missing values
 - recommend: select promising cells
 
+_notation_:  
+$u$
+: user  
+$v$
+: another user
+$i$
+: item  
+$I$
+: all items  
+$r$
+: rating   
+
 #### User-User Correlation
-Uses the Pearson Correlation Formula to calculate similarity between users mean-centered ratings for all items.  Mean-centered takes the rating for item $i$ and subtracts the average rating for all items.
+Uses the Pearson Correlation Formula to calculate similarity between user's mean-centered ratings for all items.  Mean-centered takes the rating for item $i$ and subtracts the average rating for all items.
 $$
-r_{vi} - \bar{r}_v
+r_{ui} - \bar{r}_u
 $$
 User Profile vectors are constructed out of ratings or interest in a set of items.  Use top-$n$ similar users to identify nearest neighbors with greatest similarity in terms of preference.  
 
