@@ -20,18 +20,27 @@ _notation_:
 $u$
 : user  
 $v$
-: another user
+: another user  
+$U$
+: all users  
+$N$
+: neighborhood  
 $i$
 : item  
 $I$
 : all items  
 $r$
-: rating   
+: rating  
+$w$
+: weight  
+$s$
+: score
 
 #### User-User Correlation
-Uses the Pearson Correlation Formula to calculate similarity between user's mean-centered ratings for all items.  Mean-centered takes the rating for item $i$ and subtracts the average rating for all items.
+The weight $w$, can be calculated using the Pearson Correlation Formula to calculate similarity between user's mean-centered ratings for all items.  Mean-centered takes the rating for item $i$ and subtracts the average rating for all items.  
+
 $$
-r_{ui} - \bar{r}_u
+\text{mean centered rating} = r_{ui} - \bar{r}_u
 $$
 User Profile vectors are constructed out of ratings or interest in a set of items.  Use top-$n$ similar users to identify nearest neighbors with greatest similarity in terms of preference.  
 
@@ -69,6 +78,7 @@ for (long i : allItems) {
 double similarity = Vectors.dotProduct( adjustedTargetUserVector, adjustedVUserVector ) / (Vectors.euclideanNorm(adjustedTargetUserVector) * Vectors.euclideanNorm( adjustedVUserVector ));
 ```
 
+_note: There are other ways to calculate the weight.  This is necessary if the data is unary (vector cosine is commonly used) or there is only a small amount of overlap between users._
 
 #### User-User Collaboration
 Select neighborhood of similar-taste users and use their opinions of items to predict an item(s) for the user of interest where they have not previously rated or interacted with that item. Compute a similarity score between a user and other users. Then look for users with high similarity scores (neighborhood) that have rated the item of interest or create a list of possible recommendations.  The challenge with this method is that user tastes can change over time and are usually only limited to a category of items, thus taking more compute resources to keep current.
@@ -94,18 +104,14 @@ $w$ is the weight that user $v$ should be contributing to the prediction for use
 
 $s(u,i)$ is the prediction score for user $u$ and item $i$
 
-####  User-User Collaboration with Normaliztion
+####  User-User Collaboration with Normalization
 
-This address a few issues present in the previous formula.  Used to predict socre $s$ for user $u$ against item $i$ based on scores for item $i$ by users $v$.  
+This addresses a few issues present in the previous formula.  Used to predict socre $s$ for user $u$ against item $i$ based on scores for item $i$ by users $v$.  
 $$
-s(u,i) = \bar{r_u} + {\sum_{v \in N(u;i)}(r_{vi} - \bar{r}_v) w_{uv} \over \sum_{v \in N(u;i)} w_{uv}}
+s(u,i) = \bar{r_u} + {\sum_{v \in U}(r_{vi} - \bar{r}_v) w_{uv} \over \sum_{v \in U} w_{uv}}
 $$
 
 $\bar{r_u}$ is the average of all target user $u$ ratings
-
-```excel
-AVERAGE(C13:CX13)
-```
 
 **numerator**: sum of ((rating user $v$ gave item $i$ minus user $v$ average rating) * correlation value) for all user $v$ who have a rating for item $i$
 
@@ -169,6 +175,31 @@ for (long i : items) {
 	results.add( Results.create(i,score));
 }
 ```
+
+**Neighborhood**  
+This formula is comparing against all users $v \in U$.  Most times we don't want to do that because can add too much noise if we put into our neighborhood people who aren't alike enough.
+- don't include user $u$.  ($v \neq u$)
+- limit size of users being compared (e.g. no more than 50)
+- minimum similarity  
+
+Select a neighborhood of users $V \subset U$ with highest $w_{uv}$.  
+Now our formula looks like this:
+
+$$
+s(u,i) = \bar{r_u} + {\sum_{v \in N}(r_{vi} - \bar{r}_v) \cdot w_{uv} \over \sum_{v \in N} w_{uv}}
+$$
+
+_challenges with neighborhoods:_
+- minimum similarity -> you may not get very many neighbors
+- limit the size -> you may not have very good similarity  
+- What if the correlation is negative?  Then users disagree.
+- computation is a bottleneck given $m=|U|$ users and $n=|I|$ items:
+    - correlation between two users is $O(n)$
+    - all correlations for a user is $O(mn)$
+    - all pairwise correlations is $O(m^2n)$
+
+_possible solutions:_
+- persistent neighborhoods: update on longer intervals
 
 #### Item-Item Correlation
 
