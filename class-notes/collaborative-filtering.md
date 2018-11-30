@@ -180,10 +180,12 @@ for (long i : items) {
 This formula is comparing against all users $v \in U$.  Most times we don't want to do that because can add too much noise if we put into our neighborhood people who aren't alike enough.
 - don't include user $u$.  ($v \neq u$)
 - limit size of users being compared (e.g. no more than 50)
+  - in theory, the more the better, assuming good similarity metric
+  - 25-100 is common
 - minimum similarity  
 
 Select a neighborhood of users $V \subset U$ with highest $w_{uv}$.  
-Now our formula looks like this:
+Now our UUCF formula looks like this:
 
 $$
 s(u,i) = \bar{r_u} + {\sum_{v \in N}(r_{vi} - \bar{r}_v) \cdot w_{uv} \over \sum_{v \in N} w_{uv}}
@@ -191,6 +193,7 @@ $$
 
 _challenges with neighborhoods:_
 - minimum similarity -> you may not get very many neighbors
+  - noise from dissimilar neighbors decreases usefulness
 - limit the size -> you may not have very good similarity  
 - What if the correlation is negative?  Then users disagree.
 - computation is a bottleneck given $m=|U|$ users and $n=|I|$ items:
