@@ -36,51 +36,7 @@ $w$
 $s$
 : score
 
-#### User-User Correlation
-The weight $w$, can be calculated using the Pearson Correlation Formula to calculate similarity between user's mean-centered ratings for all items.  Mean-centered takes the rating for item $i$ and subtracts the average rating for all items.  
-
-$$
-\text{mean centered rating} = r_{ui} - \bar{r}_u
-$$
-User Profile vectors are constructed out of ratings or interest in a set of items.  Use top-$n$ similar users to identify nearest neighbors with greatest similarity in terms of preference.  
-
-In User-User this similarity is not only used to find others who have the same taste as you across all ratings, but as a way to weight item predictions so that those who are more similar to you have more influence.
-$$
-w_{uv} = {\sum_{i \in I} (r_{ui} - \bar{r_u})(r_{vi} - \bar{r_v}) \over \sigma _{u}\sigma _{v}}
-$$
-
-$$
-w_{uv} = {\sum (r_{ui} - \bar{r_u})(r_{vi} - \bar{r_v}) \over \sqrt{\sum (r_{ui} - \bar{r_u})^2} \sqrt{\sum (r_{vi} - \bar{r_u})^2}}
-$$
-
-In this case we use euclidean norm for standard deviation.
-
-```excel
-CORREL('user-u-ratings'B3:CW3, 'user-v-ratings'B2:B101)
-```
-
-```java
-//raw user rating vector
-Long2DoubleOpenHashMap targetUserVector = getUserRatingVector(user);
-//adjusted or mean-centered rating vector
-Long2DoubleOpenHashMap adjustedTargetUserVector = new Long2DoubleOpenHashMap();
-
-//build profile for all items, not just the ones that were rated.  do the same thing for user v
-for (long i : allItems) {
-	if (targetUserVector.containsKey(i)) { //adjust existing value
-		adjustedTargetUserVector.put(i,(targetUserVector.get(i)-targetMean));
-	} else { //if item has not been rated then add with value of 0
-		adjustedTargetUserVector.put(i,0.0);
-	}
-}
-
-//calculate cosine similarity between targetUser and user v
-double similarity = Vectors.dotProduct( adjustedTargetUserVector, adjustedVUserVector ) / (Vectors.euclideanNorm(adjustedTargetUserVector) * Vectors.euclideanNorm( adjustedVUserVector ));
-```
-
-_note: There are other ways to calculate the weight.  This is necessary if the data is unary (vector cosine is commonly used) or there is only a small amount of overlap between users._
-
-#### User-User Collaboration
+### User-User Collaboration
 Select neighborhood of similar-taste users and use their opinions of items to predict an item(s) for the user of interest where they have not previously rated or interacted with that item. Compute a similarity score between a user and other users. Then look for users with high similarity scores (neighborhood) that have rated the item of interest or create a list of possible recommendations.  The challenge with this method is that user tastes can change over time and are usually only limited to a category of items, thus taking more compute resources to keep current.
 
 There is a variant of this that uses trusted users versus similar users and then looks at their ratings / tastes to make predictions and recommendations.
@@ -176,6 +132,50 @@ for (long i : items) {
 }
 ```
 
+#### User-User Correlation
+The weight $w$, can be calculated using the Pearson Correlation Formula to calculate similarity between user's mean-centered ratings for all items.  Mean-centered takes the rating for item $i$ and subtracts the average rating for all items.  
+
+$$
+\text{mean centered rating} = r_{ui} - \bar{r}_u
+$$
+User Profile vectors are constructed out of ratings or interest in a set of items.  Use top-$n$ similar users to identify nearest neighbors with greatest similarity in terms of preference.  
+
+In User-User this similarity is not only used to find others who have the same taste as you across all ratings, but as a way to weight item predictions so that those who are more similar to you have more influence.
+$$
+w_{uv} = {\sum_{i \in I} (r_{ui} - \bar{r_u})(r_{vi} - \bar{r_v}) \over \sigma _{u}\sigma _{v}}
+$$
+
+$$
+w_{uv} = {\sum (r_{ui} - \bar{r_u})(r_{vi} - \bar{r_v}) \over \sqrt{\sum (r_{ui} - \bar{r_u})^2} \sqrt{\sum (r_{vi} - \bar{r_u})^2}}
+$$
+
+In this case we use euclidean norm for standard deviation.
+
+```excel
+CORREL('user-u-ratings'B3:CW3, 'user-v-ratings'B2:B101)
+```
+
+```java
+//raw user rating vector
+Long2DoubleOpenHashMap targetUserVector = getUserRatingVector(user);
+//adjusted or mean-centered rating vector
+Long2DoubleOpenHashMap adjustedTargetUserVector = new Long2DoubleOpenHashMap();
+
+//build profile for all items, not just the ones that were rated.  do the same thing for user v
+for (long i : allItems) {
+	if (targetUserVector.containsKey(i)) { //adjust existing value
+		adjustedTargetUserVector.put(i,(targetUserVector.get(i)-targetMean));
+	} else { //if item has not been rated then add with value of 0
+		adjustedTargetUserVector.put(i,0.0);
+	}
+}
+
+//calculate cosine similarity between targetUser and user v
+double similarity = Vectors.dotProduct( adjustedTargetUserVector, adjustedVUserVector ) / (Vectors.euclideanNorm(adjustedTargetUserVector) * Vectors.euclideanNorm( adjustedVUserVector ));
+```
+
+_note: There are other ways to calculate the weight.  This is necessary if the data is unary (vector cosine is commonly used) or there is only a small amount of overlap between users._
+
 **Neighborhood**  
 This formula is comparing against all users $v \in U$.  Most times we don't want to do that because can add too much noise if we put into our neighborhood people who aren't alike enough.
 - don't include user $u$.  ($v \neq u$)
@@ -203,6 +203,89 @@ _challenges with neighborhoods:_
 
 _possible solutions:_
 - persistent neighborhoods: update on longer intervals
+
+### Item-Item Collaboration
+Precompute similarity between an item and other items using user ratings vector for each item.  Find items that are similar to those that the user has already rated or scored.  This method has efficiencies over user-user because items don't really changes, more about availability of item.
+
+_matrix:_ There is row for each item and a column for each item so that all possible item/item combinations are represented.  Each cell is the similarity score for the item/item combination.
+
+predicting un-normailized score for user $u$ and item $i$ wherer $r_{uj}$ is a users rating for item $j$ and $w_{ij}$ is the similarity score between items $i$ and $j$
+$$
+s(i,u) = {\sum_{j \in N(i;u)}r_{uj} w_{ij} \over \sum_{j \in N(i;u)} w_{ij}}
+$$
+```excel
+SUMPRODUCT(Matrix!$B18:$U18,Ratings!$B$3:$U$3)/SUMIFS(Matrix!$B18:$U18,Ratings!$B$3:$U$3,">0")
+```
+
+#### Item-Item Collaboration with Normaliztion
+very similar to user-user except we use item mean to normailze rating and we use the item-item similarity as the weight.  We only sum the similarity weights for items that user $u$ has rating in the denominator.
+$$
+s(i,u) = {\sum_{j \in I_u}(r_{uj}-\mu_j)w_{ij} \over \sum_{j \in I_u} |w_{ij}|} + \mu_i
+$$
+
+```excel
+(SUMPRODUCT(NormRatings!$B$3:$U$3,FilterNormMatrix!$B8:$U8)/SUMIFS(FilterNormMatrix!$B8:$U8,Ratings!$B$3:$U$3,">0"))+Ratings!$V$3
+```
+
+```java
+/**
+ * Score items for a user.
+ * @param user The user ID.
+ * @param items The score vector.  Its key domain is the items to score, and the scores
+ *               (rating predictions) should be written back to this vector.
+ */
+@Override
+public ResultMap scoreWithDetails(long user, @Nonnull Collection<Long> items) {
+    Long2DoubleMap itemMeans = model.getItemMeans();
+    Long2DoubleMap ratings = getUserRatingVector(user);
+
+    // **** Normalize the user's ratings by subtracting the item mean from each one.
+    for (Map.Entry<Long,Double> rating : ratings.entrySet()) {
+        rating.setValue(rating.getValue()-itemMeans.get(rating.getKey()));
+    }
+
+    List<Result> results = new ArrayList<>();
+
+    for (long item: items ) {
+        // **** Compute the user's score for each item, add it to results
+        // get similarity scores for item i
+        Long2DoubleMap itemSimilarities = model.getNeighbors(item);
+        // exclude this item from list
+        itemSimilarities.remove(item);
+
+        // collect values
+        // loop over user ratings and collect item similarities
+        Map<Long,Double> neighbors = new LinkedHashMap<>();
+        for (Map.Entry<Long,Double> rating : ratings.entrySet()) {
+            if (itemSimilarities.containsKey(rating.getKey()) && rating.getKey()!=item) {
+                neighbors.put(rating.getKey(), itemSimilarities.get(rating.getKey()));
+            }
+        }
+
+        // sort and take up to the top 20
+        Map<Long,Double> topTwentySortedNeighbors =
+                neighbors.entrySet().stream()
+                        .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                        .limit(neighborhoodSize)
+                        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+
+        // calculate predicted score
+        double numerator = 0.0;
+        double denominator = 0.0;
+        for (Map.Entry<Long, Double> entry : topTwentySortedNeighbors.entrySet()) {
+            long jItemId = entry.getKey();
+            numerator += ratings.get(jItemId) * entry.getValue();
+            denominator += entry.getValue();
+        }
+
+        // final score for item
+        double score = itemMeans.get(item) + (numerator/denominator);
+        results.add( Results.create(item, score));
+    }
+
+    return Results.newResultMap(results);
+}
+```
 
 #### Item-Item Correlation
 
@@ -282,91 +365,5 @@ public SimpleItemItemModel get() {
     }
 
     return new SimpleItemItemModel(LongUtils.frozenMap(itemMeans), itemSimilarities);
-}
-```
-
-
-#### Item-Item Collaboration
-Precompute similarity between an item and other items using user ratings vector for each item.  Find items that are similar to those that the user has already rated or scored.  This method has efficiencies over user-user because items don't really changes, more about availability of item.
-
-_matrix:_ There is row for each item and a column for each item so that all possible item/item combinations are represented.  Each cell is the similarity score for the item/item combination.
-
-predicting un-normailized score for user $u$ and item $i$ wherer $r_{uj}$ is a users rating for item $j$ and $w_{ij}$ is the similarity score between items $i$ and $j$
-$$
-s(i,u) = {\sum_{j \in N(i;u)}r_{uj} w_{ij} \over \sum_{j \in N(i;u)} w_{ij}}
-$$
-```excel
-SUMPRODUCT(Matrix!$B18:$U18,Ratings!$B$3:$U$3)/SUMIFS(Matrix!$B18:$U18,Ratings!$B$3:$U$3,">0")
-```
-
-#### Item-Item Collaboration with Normaliztion
-very similar to user-user except we use item mean to normailze rating and we use the item-item similarity as the weight.  We only sum the similarity weights for items that user $u$ has rating in the denominator.
-$$
-s(i,u) = {\sum_{j \in I_u}(r_{uj}-\mu_j)w_{ij} \over \sum_{j \in I_u} |w_{ij}|} + \mu_i
-$$
-
-
-
-```excel
-(SUMPRODUCT(NormRatings!$B$3:$U$3,FilterNormMatrix!$B8:$U8)/SUMIFS(FilterNormMatrix!$B8:$U8,Ratings!$B$3:$U$3,">0"))+Ratings!$V$3
-```
-
-```java
-/**
- * Score items for a user.
- * @param user The user ID.
- * @param items The score vector.  Its key domain is the items to score, and the scores
- *               (rating predictions) should be written back to this vector.
- */
-@Override
-public ResultMap scoreWithDetails(long user, @Nonnull Collection<Long> items) {
-    Long2DoubleMap itemMeans = model.getItemMeans();
-    Long2DoubleMap ratings = getUserRatingVector(user);
-
-    // **** Normalize the user's ratings by subtracting the item mean from each one.
-    for (Map.Entry<Long,Double> rating : ratings.entrySet()) {
-        rating.setValue(rating.getValue()-itemMeans.get(rating.getKey()));
-    }
-
-    List<Result> results = new ArrayList<>();
-
-    for (long item: items ) {
-        // **** Compute the user's score for each item, add it to results
-        // get similarity scores for item i
-        Long2DoubleMap itemSimilarities = model.getNeighbors(item);
-        // exclude this item from list
-        itemSimilarities.remove(item);
-
-        // collect values
-        // loop over user ratings and collect item similarities
-        Map<Long,Double> neighbors = new LinkedHashMap<>();
-        for (Map.Entry<Long,Double> rating : ratings.entrySet()) {
-            if (itemSimilarities.containsKey(rating.getKey()) && rating.getKey()!=item) {
-                neighbors.put(rating.getKey(), itemSimilarities.get(rating.getKey()));
-            }
-        }
-
-        // sort and take up to the top 20
-        Map<Long,Double> topTwentySortedNeighbors =
-                neighbors.entrySet().stream()
-                        .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                        .limit(neighborhoodSize)
-                        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
-
-        // calculate predicted score
-        double numerator = 0.0;
-        double denominator = 0.0;
-        for (Map.Entry<Long, Double> entry : topTwentySortedNeighbors.entrySet()) {
-            long jItemId = entry.getKey();
-            numerator += ratings.get(jItemId) * entry.getValue();
-            denominator += entry.getValue();
-        }
-
-        // final score for item
-        double score = itemMeans.get(item) + (numerator/denominator);
-        results.add( Results.create(item, score));
-    }
-
-    return Results.newResultMap(results);
 }
 ```
