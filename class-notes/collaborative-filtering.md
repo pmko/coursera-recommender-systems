@@ -9,6 +9,9 @@ file: explain-CSCW-20001.pdf
 - Item-Based Top-N Recommendation Algorithms  
 file: itemrsTOIS04.pdf
 
+- Item-Item: An Alternative  
+file: https://dl.acm.org/citation.cfm?id=372071
+
 ### Personalized Collaborative Filtering
 Primarily uses a matrix of user/item ratings and utilizes the opinions of others to predict/recommend.  This does not use the item attributes, but just the opinion or tendency towards an item to make predictions and recommendations.
 
@@ -27,6 +30,8 @@ $N$
 : neighborhood  
 $i$
 : item  
+$j$
+: another item  
 $I$
 : all items  
 $r$
@@ -205,22 +210,34 @@ _possible solutions:_
 - persistent neighborhoods: update on longer intervals
 
 ### Item-Item Collaboration
-Precompute similarity between an item and other items using user ratings vector for each item.  Find items that are similar to those that the user has already rated or scored.  This method has efficiencies over user-user because items don't really changes, more about availability of item.
+The reason this was developed was to address the limitations of UUCF.  
+- sparsity of user ratings
+- computational performance: profiles were subject to change and computing all pairs of correlations utilizes a lot of resources
 
-_matrix:_ There is row for each item and a column for each item so that all possible item/item combinations are represented.  Each cell is the similarity score for the item/item combination.
+The pros of IICF include:
+- item-item similarities don't change
+- there are generally more users than items, resulting in items having more ratings than users
 
-predicting un-normailized score for user $u$ and item $i$ wherer $r_{uj}$ is a users rating for item $j$ and $w_{ij}$ is the similarity score between items $i$ and $j$
+There are two ways to calculate similarity between two items:
+1. correlation between item rating vectors
+2. cosine of item rating vectors (also works with unary ratings)
+
+Precompute similarity between an item and other items using user ratings vector for each item.  Find items that are similar to those that the user has already rated, scored, viewed or in their cart. If we know which items you've already rated that are most like the item being considered, then those are probably pretty good predictors for the item that the user is considering next.
+
+_model / matrix:_ There is row for each item and a column for each item so that all possible item/item combinations are represented.  Each cell is the similarity score for the item/item combination.
+
+predicting un-normalized score for user $u$ and item $i$ where $r_{uj}$ is a users rating for item $j$ and $w_{ij}$ is the similarity score between items $i$ and $j$
 $$
-s(i,u) = {\sum_{j \in N(i;u)}r_{uj} w_{ij} \over \sum_{j \in N(i;u)} w_{ij}}
+s(i,u) = {\sum_{j \in N(i;u)}r_{uj} w_{ij} \over \sum_{j \in N(i;u)} |w_{ij}|}
 $$
 ```excel
 SUMPRODUCT(Matrix!$B18:$U18,Ratings!$B$3:$U$3)/SUMIFS(Matrix!$B18:$U18,Ratings!$B$3:$U$3,">0")
 ```
 
-#### Item-Item Collaboration with Normaliztion
+#### Item-Item Collaboration with Normalization
 very similar to user-user except we use item mean to normailze rating and we use the item-item similarity as the weight.  We only sum the similarity weights for items that user $u$ has rating in the denominator.
 $$
-s(i,u) = {\sum_{j \in I_u}(r_{uj}-\mu_j)w_{ij} \over \sum_{j \in I_u} |w_{ij}|} + \mu_i
+s(i,u) = {\sum_{j \in N}(r_{uj}-\bar{r}_j)w_{ij} \over \sum_{j \in N} |w_{ij}|} + \bar{r}_i
 $$
 
 ```excel
@@ -367,3 +384,10 @@ public SimpleItemItemModel get() {
     return new SimpleItemItemModel(LongUtils.frozenMap(itemMeans), itemSimilarities);
 }
 ```
+**Neighborhood**  
+Defined as $k$ most similar items that user has rated - neighborhood $N(i;u)$
+- compute cosine similarities over the item mean normalized ratings
+- Only store neighbors with positive similarities (> 0)
+- $k$ too small makes for inaccurate scores
+- $k$ too large has too much noise
+- $k$ = 20 is recommended
